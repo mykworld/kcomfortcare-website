@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kcomfortcare | Home Wellness Service</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* LIGHT BACKGROUND GLOW */
+
+body::before{
+content:'';
+position:fixed;
+width:350px;
+height:350px;
+background:#00e5ff10;
+filter:blur(100px);
+top:-100px;
+right:-100px;
+z-index:-2;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:300px;
+height:300px;
+background:#d4a64a10;
+filter:blur(100px);
+bottom:-100px;
+left:-100px;
+z-index:-2;
+}
+
+/* PARTICLES */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+z-index:-1;
+background-image:
+radial-gradient(#00e5ff66 1px, transparent 1px),
+radial-gradient(#d4a64a66 1px, transparent 1px);
+
+background-size:120px 120px;
+animation:particlesMove 20s linear infinite;
+opacity:0.35;
+}
+
+@keyframes particlesMove{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(-120px);
+}
+}
+
+/* HERO */
+
+header{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+text-align:center;
+}
+
+.hero{
+max-width:900px;
+animation:fadeIn 1.2s ease;
+}
+
+/* LOGO */
+
+.logo{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:3px solid #d4a64a;
+box-shadow:0 0 15px #00e5ff40;
+margin-bottom:30px;
+animation:float 4s ease-in-out infinite;
+}
+
+/* TEXT */
+
+h1{
+font-size:58px;
+font-weight:700;
+margin-bottom:20px;
+
+background:linear-gradient(to right,#d4a64a,#00e5ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:19px;
+line-height:1.9;
+color:#d0d0d0;
+margin-bottom:35px;
+}
+
+/* BUTTONS */
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+}
+
+.primary{
+background:linear-gradient(to right,#d4a64a,#00e5ff);
+color:black;
+}
+
+.primary:hover{
+transform:translateY(-4px);
+box-shadow:0 0 20px #00e5ff60;
+}
+
+.secondary{
+border:2px solid #00e5ff;
+color:#00e5ff;
+}
+
+.secondary:hover{
+background:#00e5ff;
+color:black;
+}
+
+/* SECTION */
+
+section{
+padding:90px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:60px;
+
+background:linear-gradient(to right,#d4a64a,#00e5ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:25px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#00e5ff50;
+box-shadow:0 0 15px #00e5ff20;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:18px;
+color:#d4a64a;
+}
+
+.card p{
+color:#d0d0d0;
+line-height:1.8;
+}
+
+/* LOCATION */
+
+.location{
+max-width:850px;
+margin:auto;
+text-align:center;
+padding:55px 30px;
+border-radius:30px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.location h2{
+font-size:48px;
+margin-bottom:20px;
+color:#00e5ff;
+}
+
+.location p{
+font-size:18px;
+line-height:1.8;
+color:#d0d0d0;
+}
+
+/* STEPS */
+
+.steps{
+max-width:900px;
+margin:auto;
+display:grid;
+gap:20px;
+}
+
+.step{
+padding:25px;
+border-left:4px solid #00e5ff;
+background:rgba(255,255,255,0.04);
+border-radius:15px;
+transition:0.4s;
+}
+
+.step:hover{
+transform:translateX(8px);
+}
+
+.step h3{
+margin-bottom:10px;
+color:#d4a64a;
+}
+
+.step p{
+color:#d0d0d0;
+line-height:1.7;
+}
+
+/* CONTACT */
+
+.contact-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+padding:50px 30px;
+border-radius:25px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.contact-box h3{
+font-size:32px;
+margin-bottom:20px;
+color:#00e5ff;
+}
+
+.contact-box p{
+font-size:18px;
+color:#d0d0d0;
+margin-bottom:20px;
+}
+
+.email{
+font-size:24px;
+font-weight:600;
+color:#d4a64a;
+word-break:break-word;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px 20px;
+text-align:center;
+color:#999;
+border-top:1px solid rgba(255,255,255,0.08);
+margin-top:70px;
+line-height:1.8;
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-12px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0px);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.logo{
+width:180px;
+height:180px;
+}
+
+h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.location h2{
+font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- PARTICLES -->
+
+<div class="particles"></div>
+
+<!-- HERO -->
+
+<header>
+
+<div class="hero">
+
+<!-- LOGO -->
+
+<img src="logo.webp" class="logo">
+
+<h1>Kcomfortcare</h1>
+
+<p>
+Premium home wellness & relaxation care inquiry service.<br>
+Professional, safe and personalized coordination currently available only in Dehradun.
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn primary">
+Book Inquiry
+</a>
+
+<a href="https://instagram.com/kcomfortcare" class="btn secondary">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- SERVICES -->
+
+<section>
+
+<h2 class="section-title">
+Our Services
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Home Visit</h3>
+
+<p>
+Comfort-focused wellness assistance coordinated for home visits with a smooth and private inquiry process.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Care</h3>
+
+<p>
+Personalized communication and inquiry handling with professional coordination support.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Relax</h3>
+
+<p>
+Relaxation-centered wellness experience designed for comfort and convenience at home.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOCATION -->
+
+<section>
+
+<div class="location">
+
+<h2>
+Available In Dehradun
+</h2>
+
+<p>
+Kcomfortcare is currently providing inquiry and coordination support services only in Dehradun.
+Expansion to nearby locations may be available in the future.
+</p>
+
+</div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section>
+
+<h2 class="section-title">
+How It Works
+</h2>
+
+<div class="steps">
+
+<div class="step">
+
+<h3>1. Submit Inquiry</h3>
+
+<p>
+Customer sends booking request through website or Instagram.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>2. Verification</h3>
+
+<p>
+Inquiry details are reviewed and confirmed personally.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>3. Coordination</h3>
+
+<p>
+Suitable local service coordination is arranged based on availability.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>4. Booking Confirmation</h3>
+
+<p>
+Booking details and timing are finalized professionally.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<div class="contact-box">
+
+<h3>
+Inquiry Support
+</h3>
+
+<p>
+Email us for bookings and inquiries
+</p>
+
+<div class="email">
+Kcomfortcare.in@gmail.com
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Kcomfortcare • Comfort • Care • Relief
+
+<br><br>
+
+Professional wellness inquiry and coordination service.
+
+</footer>
+
+</body>
+</html>
